@@ -1,8 +1,4 @@
-var MjpegConsumer = (function(coverage) {
-  return coverage
-    ? require('../lib/mjpeg-consumer-cov')
-    : require('../lib/mjpeg-consumer');
-})(process.env.USE_COVERAGE);
+var MjpegConsumer = require('../lib/mjpeg-consumer');
 
 var http = require('http');
 var fs = require('fs');
@@ -63,12 +59,6 @@ module.exports.testConsumer = function(t) {
     next();
   };
   req.pipe(consumer).pipe(ws);
-};
-
-module.exports.testConstructor = function(t) {
-  var consumer = MjpegConsumer();
-  t.ok(consumer instanceof MjpegConsumer);
-  t.done();
 };
 
 module.exports.testInitFrame = function(t) {

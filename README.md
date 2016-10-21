@@ -1,5 +1,17 @@
-mjpeg-consumer
-==================
+# tessel-mjpeg-consumer
+
+
+---------------
+
+**This is a fork**
+
+- Defines `MjpegConsumer` as a class
+- Eliminates the `buffertools` dependency. That dependency existed only to provide a `concat` method, which is provided by the runtime as `Buffer.concat(...)`
+- Eliminates `oldBufferType` mode
+- Eliminates invocation without `new`
+
+---------------
+
   
 A node.js transform stream implementation that consumes http multipart mjpeg streams and emits jpegs.
 
